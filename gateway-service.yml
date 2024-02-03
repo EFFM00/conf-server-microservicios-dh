@@ -16,6 +16,8 @@ spring:
       discovery:
         serviceId: config-server
         enabled: true
+    default-filters:
+      - TokenRelay=
     gateway:
       routes:
         - id: checkout-service
