@@ -23,14 +23,14 @@ spring:
         - id: checkout-service
           uri: lb://checkout-service
           predicates:
-            - Path=/checkout
+            - Path=/checkout/**
           filters:
             - AddRequestHeader=X-Request-From, gateway
             - AddRequestHeader=X-Token-Test, abc123
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/products
+            - Path=/products/**
           filters:
             - AddRequestHeader=X-Request-From, gateway
             - AddRequestHeader=X-Token-Test, abc123
